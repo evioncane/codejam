@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8cb6d028-3182-4a8b-84d6-2ec3074d4146" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/year_2019/qualification/cryptopanagrams/set1/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/year_2019/qualification/cryptopanagrams/set2/Solution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/year_2018/qualification/number_guessing/Solution.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CodeJam/year_2019/qualification/cryptopanagrams/Solution.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/year_2019/qualification/cryptopanagrams/Solution.java" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,12 +41,14 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../CodeJamSolutions/codejam" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="year_2018.qualification.number_guessing" />
       <recent name="year_2019.qualification.cryptopanagrams.set1" />
     </key>
   </component>
@@ -67,7 +64,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Solution (3)">
+  <component name="RunManager" selected="Application.Solution (4)">
     <configuration name="Solution (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="year_2019.qualification.you_can_go_your_own_way.Solution" />
       <module name="CodeJam" />
@@ -107,9 +104,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Solution" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="year_2019.qualification.foregone_solution.Solution" />
+    <configuration name="Solution (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="year_2018.qualification.number_guessing.Solution" />
       <module name="CodeJam" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="year_2018.qualification.number_guessing.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -142,11 +145,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Solution (4)" />
         <item itemvalue="Application.Solution (3)" />
         <item itemvalue="Application.Solution (2)" />
         <item itemvalue="Application.Solution (2)" />
         <item itemvalue="Application.Test" />
-        <item itemvalue="Application.Solution (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -163,8 +166,17 @@
       <workItem from="1567583968574" duration="19543000" />
       <workItem from="1569231421499" duration="28336000" />
       <workItem from="1569412442438" duration="12340000" />
-      <workItem from="1569482930017" duration="16122000" />
+      <workItem from="1569482930017" duration="16190000" />
+      <workItem from="1569579241868" duration="9690000" />
     </task>
+    <task id="LOCAL-00001" summary="Cryptography">
+      <created>1569514018830</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1569514018830</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -182,6 +194,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Cryptography" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cryptography" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -210,6 +226,16 @@
           <url>file://$PROJECT_DIR$/src/year_2019/qualification/cryptopanagrams/set2/Solution.java</url>
           <line>122</line>
           <option name="timeStamp" value="91" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/year_2018/qualification/number_guessing/Solution.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="94" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/year_2018/qualification/number_guessing/Solution.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="96" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
