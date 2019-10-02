@@ -24,19 +24,17 @@ public class Solution {
             long maxCaseNumber = log2Round(UPPER_BOUND - LOWER_BOUND);
             boolean upper_check = false;
             if (maxCaseNumber < maxGuessNumber) {
-                System.out.print(UPPER_BOUND);
+                System.out.println(UPPER_BOUND);
+                System.out.flush();
                 String answer = in.next();
                 upper_check = answer.equals(CORRECT);
                 maxGuessNumber--;
             }
-            //flush
             if (!upper_check) {
-                in.nextLine();
                 for (int j = 0; j<maxGuessNumber; j++) {
                     final int guess = guessNumber(LOWER_BOUND, UPPER_BOUND);
-                    System.out.print(guess);
-                    //flush
-                    in.nextLine();
+                    System.out.println(guess);
+                    System.out.flush();
                     String answer = in.next();
                     if (answer.equals(CORRECT)) {
                         break;
