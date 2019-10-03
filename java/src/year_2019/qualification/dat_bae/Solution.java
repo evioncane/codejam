@@ -63,7 +63,9 @@ public class Solution {
             while (true) {
                 list = generateChildNodes(list);
                 String input = generateInput(list);
-                list.isEmpty();
+                System.out.println(input);
+                System.out.flush();
+                String output = in.next();
                 break;
             }
 
@@ -72,6 +74,7 @@ public class Solution {
 }
 
 class Node {
+
     private final Integer length;
 
     private Integer notWorking;
@@ -81,11 +84,11 @@ class Node {
     }
 
     public int getLength() {
-        return length;
+        return this.length;
     }
 
     public int getNotWorking() {
-        return notWorking;
+        return this.notWorking;
     }
 
     public void setNotWorking(int notWorking) {

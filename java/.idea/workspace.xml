@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8cb6d028-3182-4a8b-84d6-2ec3074d4146" name="Default Changelist" comment="Guess">
-      <change afterPath="$PROJECT_DIR$/src/year_2019/qualification/dat_bae/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/year_2019/qualification/dat_bae/testing_tool.py" afterDir="false" />
+    <list default="true" id="8cb6d028-3182-4a8b-84d6-2ec3074d4146" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/year_2018/qualification/number_guessing/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/year_2018/qualification/number_guessing/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/year_2019/qualification/dat_bae/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/year_2019/qualification/dat_bae/Solution.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -164,7 +162,9 @@
       <workItem from="1569916306459" duration="8018000" />
       <workItem from="1569934948588" duration="725000" />
       <workItem from="1569935697740" duration="5908000" />
-      <workItem from="1570011237452" duration="10240000" />
+      <workItem from="1570011237452" duration="10338000" />
+      <workItem from="1570086235254" duration="7758000" />
+      <workItem from="1570105960989" duration="1040000" />
     </task>
     <task id="LOCAL-00001" summary="Cryptography">
       <created>1569514018830</created>
@@ -180,7 +180,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569599960920</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Guess and dat_bae">
+      <created>1570028946678</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1570028946678</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -202,7 +209,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Cryptography" />
     <MESSAGE value="Guess" />
-    <option name="LAST_COMMIT_MESSAGE" value="Guess" />
+    <MESSAGE value="Guess and dat_bae" />
+    <option name="LAST_COMMIT_MESSAGE" value="Guess and dat_bae" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -244,7 +252,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/year_2019/qualification/dat_bae/Solution.java</url>
-          <line>65</line>
+          <line>67</line>
           <option name="timeStamp" value="99" />
         </line-breakpoint>
       </breakpoints>
