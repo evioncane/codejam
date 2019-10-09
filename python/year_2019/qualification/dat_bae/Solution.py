@@ -27,6 +27,15 @@ class Node(object):
                 input += bit
         return input
 
+    def generate_child_nodes(self, output):
+        if (self.length == 1):
+            return
+        #if (self.not_working > 0 and self.children):
+
+
+
+    #def check_if_done(self):
+
 
 
 testCases = int(input())
@@ -44,13 +53,18 @@ for testCase in range(1, testCases + 1):
     parentNode.add_child(node1)
     parentNode.add_child(node2)
     parentNode.children[0].add_child(node3)
-    parentNode.children[0].add_child(node4)
+    parentNode.children[0].children[0].add_child(node4)
     inp = parentNode.generate_node_input()
     for i in range(0, 5):
         #generate input
-        input = parentNode.generate_node_input()
-        print(input, flush=True)
+        input_param = parentNode.generate_node_input()
+        print(input_param, flush=True)
         #get output
-        output = type(input())
+        output = input()
         #modify tree
-    print("1 2 3", flush=True)
+        parentNode.generate_child_nodes(output)
+        #check if done
+        result = parentNode.check_if_done()
+        if (result):
+            print(str(result), flush=True)
+            break
