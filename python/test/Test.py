@@ -1,3 +1,5 @@
+import re
+
 def scope_test():
     def do_local():
         spam = "local spam"
@@ -20,3 +22,13 @@ def scope_test():
 
 scope_test()
 print("In global scope:", spam)
+
+s='10000011111100011010101011'
+n = 3
+
+my_regex = r"((0){1," + str(n) + r"}|(1){1," + str(n) + "})\1*?"
+
+l = [m.group() for m in re.finditer(my_regex, s)]
+
+
+print("out", l)
