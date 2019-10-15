@@ -31,27 +31,30 @@ class Node(object):
         return inp
 
     def generate_child_nodes(self, output):
-        check = True
+        global check
         if self.length == 1 or self.not_working == 0 or self.length == self.not_working:
             return
         elif len(self.children) > 0:
+            check = False
             start = int(0)
             for child in self.children:
                 output_length = int(child.length-child.not_working)
                 end = int(start + output_length)
                 mini_output = output[start: end]
-                child.generate_node_input(child, mini_output)
+                child.generate_child_nodes(mini_output)
                 start = start + output_length
         elif int(self.length) > 1 and int(self.not_working) > 0:
+            check = False
             child_node_number = int(self.length/self.not_working)
             my_regex = r"((0){1," + str(self.not_working) + r"}|(1){1," + str(self.not_working) + "})\1*?"
             list = [m.group() for m in re.finditer(my_regex, output)]
             excpected_character = '0'
             all_in_one_node = False
             for i in range(0, child_node_number):
-                chr = list[i]
+                if len(list) > i:
+                    chr = list[i]
                 #calculate not_working
-                if chr == excpected_character:
+                if chr and chr == excpected_character:
                     problematic_bits = self.not_working-len(list)
                     node = Node(self.not_working, problematic_bits)
                     self.add_child(node)
@@ -86,6 +89,7 @@ for testCase in range(1, testCases + 1):
     f = line[2]
     parentNode = Node(n, b)
     for i in range(0, 5):
+        check = True
         #generate input
         input_param = parentNode.generate_node_input()
         print(input_param, flush=True)
@@ -93,4 +97,4 @@ for testCase in range(1, testCases + 1):
         output = input()
         #modify tree
         parentNode.generate_child_nodes(output)
-        print("kico")
+        print('KICO')
