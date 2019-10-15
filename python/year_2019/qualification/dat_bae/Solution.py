@@ -38,11 +38,12 @@ class Node(object):
             start = int(0)
             for child in self.children:
                 output_length = int(child.length-child.not_working)
-                mini_output = output[start, start+output_length]
-                child.generate_node_input(mini_output)
+                end = int(start + output_length)
+                mini_output = output[start: end]
+                child.generate_node_input(child, mini_output)
                 start = start + output_length
         elif int(self.length) > 1 and int(self.not_working) > 0:
-            child_node_number = math.ceil(self.length/self.not_working)
+            child_node_number = int(self.length/self.not_working)
             my_regex = r"((0){1," + str(self.not_working) + r"}|(1){1," + str(self.not_working) + "})\1*?"
             list = [m.group() for m in re.finditer(my_regex, output)]
             excpected_character = '0'
@@ -62,15 +63,18 @@ class Node(object):
                     break
             if not all_in_one_node:
                 last_node_length = self.length % self.not_working
+                chr = list[-1][0]
                 if last_node_length != 0:
-                    last_node_not_working = last_node_length - len(list[-1])
-                    last_node = Node(last_node_length, last_node_not_working)
-                    self.add_child(last_node)
-
+                    if chr == excpected_character:
+                        last_node_not_working = last_node_length - len(list[-1])
+                        last_node = Node(last_node_length, last_node_not_working)
+                        self.add_child(last_node)
+                    else:
+                        last_node = Node(last_node_length, last_node_length)
+                        self.add_child(last_node)
 
 
     #def check_if_done(self):
-
 
 
 testCases = int(input())
@@ -81,15 +85,6 @@ for testCase in range(1, testCases + 1):
     b = line[1]
     f = line[2]
     parentNode = Node(n, b)
-    #node1 = Node(11,5)
-    #node2 = Node(3,1)
-    #node3 = Node(6,3)
-    #node4 = Node(5,2)
-    #parentNode.add_child(node1)
-    #parentNode.add_child(node2)
-    #parentNode.children[0].add_child(node3)
-    #parentNode.children[0].children[0].add_child(node4)
-    inp = parentNode.generate_node_input()
     for i in range(0, 5):
         #generate input
         input_param = parentNode.generate_node_input()
@@ -99,8 +94,3 @@ for testCase in range(1, testCases + 1):
         #modify tree
         parentNode.generate_child_nodes(output)
         print("kico")
-        #check if done
-        #result = parentNode.check_if_done()
-        #if (result):
-        #    print(str(result), flush=True)
-        #    break
