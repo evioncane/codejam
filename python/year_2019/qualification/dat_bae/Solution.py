@@ -82,18 +82,16 @@ class Node(object):
                     node = Node(self.not_working, self.not_working)
                     self.add_child(node)
                     all_in_one_node = True
-                    break
-            if not all_in_one_node:
-                last_node_length = self.length % self.not_working
-                chr = list[-1][0]
-                if last_node_length != 0:
-                    if chr == excpected_character:
-                        last_node_not_working = last_node_length - len(list[-1])
-                        last_node = Node(last_node_length, last_node_not_working)
-                        self.add_child(last_node)
-                    else:
-                        last_node = Node(last_node_length, last_node_length)
-                        self.add_child(last_node)
+            last_node_length = self.length % self.not_working
+            chr = list[-1][0]
+            if last_node_length != 0:
+                if chr == excpected_character:
+                    last_node_not_working = last_node_length - len(list[-1])
+                    last_node = Node(last_node_length, last_node_not_working)
+                    self.add_child(last_node)
+                else:
+                    last_node = Node(last_node_length, last_node_length)
+                    self.add_child(last_node)
 
 
 testCases = int(input())
