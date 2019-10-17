@@ -71,17 +71,20 @@ class Node(object):
             all_in_one_node = False
             for i in range(0, child_node_number):
                 if len(list) > i:
-                    chr = list[i]
+                    chr = list[i][0]
                 # calculate not_working
                 if chr and chr == excpected_character:
-                    problematic_bits = self.not_working - len(list)
+                    problematic_bits = self.not_working - len(list[i])
                     node = Node(self.not_working, problematic_bits)
                     self.add_child(node)
                     excpected_character = switch_bit(excpected_character)
                 else:
                     node = Node(self.not_working, self.not_working)
                     self.add_child(node)
-                    all_in_one_node = True
+                    node2 = Node(self.not_working, int(0))
+                    self.add_child(node2)
+                    excpected_character = switch_bit(excpected_character)
+                    #all_in_one_node = True
             last_node_length = self.length % self.not_working
             chr = list[-1][0]
             if last_node_length != 0:
@@ -90,8 +93,8 @@ class Node(object):
                     last_node = Node(last_node_length, last_node_not_working)
                     self.add_child(last_node)
                 else:
-                    last_node = Node(last_node_length, last_node_length)
-                    self.add_child(last_node)
+                    previous_node = Node(last_node_length, last_node_length)
+                    self.add_child(previous_node)
 
 
 testCases = int(input())
