@@ -81,8 +81,9 @@ class Node(object):
                 else:
                     node = Node(self.not_working, self.not_working)
                     self.add_child(node)
-                    node2 = Node(self.not_working, int(0))
-                    self.add_child(node2)
+                    if len(list) - 1 > i:
+                        node2 = Node(self.not_working, int(0))
+                        self.add_child(node2)
                     excpected_character = switch_bit(excpected_character)
                     #all_in_one_node = True
             last_node_length = self.length % self.not_working
