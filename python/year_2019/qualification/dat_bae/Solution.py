@@ -63,13 +63,13 @@ class Node(object):
                 child.generate_child_nodes(mini_output)
                 start = start + output_length
         elif int(self.length) > 1 and int(self.not_working) > 0:
-            check = False
             child_node_number = int(self.length / self.not_working)
             my_regex = r"((0){1," + str(self.not_working) + r"}|(1){1," + str(self.not_working) + "})\1*?"
             list = [m.group() for m in re.finditer(my_regex, output)]
             excpected_character = '0'
-            all_in_one_node = False
-            for i in range(0, child_node_number):
+            #for i in range(0, child_node_number):
+            i = 0
+            while i < child_node_number:
                 if len(list) > i:
                     chr = list[i][0]
                 # calculate not_working
@@ -81,11 +81,12 @@ class Node(object):
                 else:
                     node = Node(self.not_working, self.not_working)
                     self.add_child(node)
-                    if len(list) - 1 > i:
+                    if len(list) > i:
                         node2 = Node(self.not_working, int(0))
                         self.add_child(node2)
+                        i += 1
                     excpected_character = switch_bit(excpected_character)
-                    #all_in_one_node = True
+                i += 1
             last_node_length = self.length % self.not_working
             chr = list[-1][0]
             if last_node_length != 0:
@@ -98,6 +99,16 @@ class Node(object):
                     self.add_child(previous_node)
 
 
+    def check_if_solved(self):
+        if self.length == 1 or self.not_working == 0 or self.length == self.not_working:
+            return True
+        elif len(self.children) > 0:
+            for child in self.children:
+                result = child.check_if_solved()
+                if not result:
+                    return False
+        return True
+
 testCases = int(input())
 
 for testCase in range(1, testCases + 1):
@@ -107,7 +118,6 @@ for testCase in range(1, testCases + 1):
     f = line[2]
     parentNode = Node(n, b)
     for i in range(0, 5):
-        check = True
         # generate input
         input_param = parentNode.generate_node_input()
         print(input_param, flush=True)
@@ -115,7 +125,7 @@ for testCase in range(1, testCases + 1):
         output = input()
         # modify tree
         parentNode.generate_child_nodes(output)
-        if check:
+        if parentNode.check_if_solved():
             global results
             results = []
             global count
