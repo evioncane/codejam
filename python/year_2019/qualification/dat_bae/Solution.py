@@ -51,7 +51,6 @@ class Node(object):
 
 
     def generate_child_nodes(self, output):
-        global check
         if self.length == 1 or self.not_working == 0 or self.length == self.not_working:
             return
         elif len(self.children) > 0:
@@ -107,7 +106,8 @@ class Node(object):
                 result = child.check_if_solved()
                 if not result:
                     return False
-        return True
+            return True
+        return False
 
 testCases = int(input())
 
