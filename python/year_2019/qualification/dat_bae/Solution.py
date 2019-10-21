@@ -99,7 +99,17 @@ class Node(object):
 
 
     def check_if_solved(self):
-        if self.length == 1 or self.not_working == 0 or self.length == self.not_working:
+        global results
+        global count
+        if self.length == 1:
+            return True
+        elif self.not_working == 0:
+            return True
+        elif self.length == self.not_working:
+            for i in range(0, self.length):
+                results.append(count)
+                count += 1
+
             return True
         elif len(self.children) > 0:
             for child in self.children:
@@ -109,7 +119,13 @@ class Node(object):
             return True
         return False
 
+
+global results
+global count
+
+
 testCases = int(input())
+
 
 for testCase in range(1, testCases + 1):
     line = input().split()
@@ -118,6 +134,8 @@ for testCase in range(1, testCases + 1):
     f = line[2]
     parentNode = Node(n, b)
     for i in range(0, 5):
+        results = []
+        count = 0
         # generate input
         input_param = parentNode.generate_node_input()
         print(input_param, flush=True)
@@ -126,10 +144,5 @@ for testCase in range(1, testCases + 1):
         # modify tree
         parentNode.generate_child_nodes(output)
         if parentNode.check_if_solved():
-            global results
-            results = []
-            global count
-            count = 0
-            get_results(parentNode)
             print(' '.join(map(str, results)), flush=True)
             break
